@@ -27,9 +27,8 @@ impl GameControl {
 }
 
 pub fn get_movement(control: GameControl, input: &Res<ButtonInput<KeyCode>>) -> f32 {
-    if control.pressed(input) {
-        1.0
-    } else {
-        0.0
+    match control.pressed(input) {
+        true => 1.0,
+        false => 0.0,
     }
 }
